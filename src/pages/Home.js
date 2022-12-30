@@ -6,10 +6,10 @@ import ProductCard from '../components/ProductCard';
 const Home = () => {
   // console.log(productList);
   return (
-    <Paper sx={{ maxWidth: 1500, margin: 'auto' }}>
+    <Paper sx={{ maxWidth: 1500, margin: 'auto', backgroundColor: '#fafafa' }}>
       <Stack>
         <Box>
-          <Typography align="center" sx={{ fontSize: 32 }}>
+          <Typography align="center" sx={{ fontSize: 32 }} marginBottom={6}>
             Product List
           </Typography>
         </Box>
@@ -17,7 +17,7 @@ const Home = () => {
           <Grid
             container
             spacing={6}
-            sx={{ display: 'flex', justifyContent: 'space-around', boxShadow: 0 }}
+            sx={{ display: 'flex', justifyContent: 'space-evenly', boxShadow: 0 }}
           >
             {productList.map((product) => (
               <Grid item>

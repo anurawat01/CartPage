@@ -1,24 +1,17 @@
 import * as React from 'react';
 
-import {
-  Box,
-  Typography,
-  Button,
-  CardMedia,
-  Card,
-  CardActions,
-  CardContent,
-  ButtonGroup,
-} from '@mui/material';
+import { Box, Typography, CardMedia, Card, CardContent } from '@mui/material';
 
 export default function ProductCard({ product }) {
   return (
-    <Box width={300} spacing={2}>
+    <Box width={300} spacing={2} boxShadow={5} elevation={2}>
       <Card
         height={500}
         sx={{
+          cursor: 'pointer',
+          transition: 'transform 0.3s',
           '&:hover': {
-            scale: 2,
+            transform: ' scale(1.2)',
           },
         }}
       >
@@ -33,14 +26,6 @@ export default function ProductCard({ product }) {
               ? product.description
               : product.description.slice(0, 100) + '...'}
           </Typography>
-          {/* <CardActions>
-            <Button variant="contained" size="small" sx={{ fontSize: 20 }}>
-              +
-            </Button>
-            <Button variant="contained" size="small" sx={{ fontSize: 20 }}>
-              -
-            </Button>
-          </CardActions> */}
         </CardContent>
       </Card>
     </Box>
