@@ -1,4 +1,5 @@
 const path = require("path");
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -6,6 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "public"),
     filename: "bundle.js",
+    publicPath: "/",
   },
 
   target: "web",
@@ -14,18 +16,22 @@ module.exports = {
     static: ["./public"],
     open: true,
     hot: true,
-    liveReload: true,
+    historyApiFallback: true,
   },
   resolve: {
-    extensions: [".js", ".jsx", ".json", ".ts"],
+    extensions: [ "*", ".js", ".jsx", ".json", ".ts" ],
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: "babel-loader",
+        use: ["babel-loader"],
       },
+      {
+        test: /\.(s(a|c)ss)$/,
+        use: ['style-loader','css-loader', 'sass-loader']
+     }        
     ],
   },
 };
