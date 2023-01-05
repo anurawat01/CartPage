@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Box, Typography, CardMedia, Card, CardContent } from '@mui/material';
+import { Box, Typography, CardMedia, Card, CardContent, Divider } from '@mui/material';
 
 export default function ProductCard({ product }) {
   return (
@@ -16,6 +16,7 @@ export default function ProductCard({ product }) {
         }}
       >
         <CardMedia component="img" height={200} image={product.image} />
+        <Divider variant="middle" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {product.title.length <= 15 ? product.title : product.title.slice(0, 15) + '...'}
